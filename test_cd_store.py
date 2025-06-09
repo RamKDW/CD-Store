@@ -1,3 +1,6 @@
+from cd_warehouse import CDWarehouse
+
+
 def test_successful_purchase():
     warehouse = CDWarehouse()
     warehouse.add_cd_in_stock("The Wall", 5)
