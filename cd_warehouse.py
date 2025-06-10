@@ -1,6 +1,7 @@
 class CDWarehouse:
     def __init__(self):
         self.cds = {}
+        self.chart = None
 
     def title_artist_pair(self, title, artist):
         return f"{title.lower()}|{artist.lower()}"
@@ -30,3 +31,6 @@ class CDWarehouse:
         key = self.title_artist_pair(title, artist)
         if self.cds.get(key, 0) > quantity:
             self.cds[key] -= quantity
+
+        if self.chart:
+            self.chart.notify_sale(title, artist, quantity)
