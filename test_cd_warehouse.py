@@ -20,3 +20,10 @@ def test_purchase_cd():
     print(store.cds)
     store.purchase("ABC Songs", "Weekend", 2763876487, 1)
     assert store.get_stock("ABC Songs", "Weekend") == 2
+
+
+def test_add_multiple_cds():
+    store = CDWarehouse()
+    store.add_cd("Baby Shark", "Pinkfog", 5)
+    store.add_cd("Baby Shark", "Pinkfog", 8)
+    assert store.get_stock("Baby Shark", "Pinkfog") == 13
